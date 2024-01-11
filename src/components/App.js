@@ -1,21 +1,31 @@
-import Login from "./Login";
+import Form from "./Form";
 
-var isLoggedIn = false; 
 
 // Ternary  below 
+// import Login from "./Login";
+//var isLoggedIn = true; 
 // isLoggedIn ? <h1>Hello</h1> : <Login />
 
-//Operator below
+//Operator below. && doesn't mean that condition or the other, its activated when first condition is met. 
 // const currentTime = new Date().getHours();
-// currentTime > 12 && <h1>What are you doing so late</h1>
+// currentTime > 12 && <h1>What are you doing so late?</h1>
 
-// if isLoggedin "user loged in" render Hello, otherwise render Login component 
+var userIsRegistered = false;
+
 function App() {
   return (
     <div className="container">
-     {isLoggedIn ? <h1>Hello</h1> : <Login />} 
+     <Form 
+     isRegistered={userIsRegistered}
+     />
     </div>
   );
 }
 
 export default App;
+
+//Challenge: Without moving the userIsRegistered variable,
+//1. Show Login as the button text if userIsRegistered is true.
+//Show Register as the button text if userIsRegistered is false.
+//2. Only show the Confirm Password input if userIsRegistered is false.
+//Don't show it if userIsRegistered is true.
